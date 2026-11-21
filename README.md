@@ -4,6 +4,7 @@ Founder-led digital marketing and search visibility agency website for **SeoBay 
 
 Built with **Next.js 14 App Router**, **TypeScript**, **Tailwind CSS**, and **Keystatic CMS**.
 
+https://www.seobay.in/
 ---
 
 ## Quick Start
