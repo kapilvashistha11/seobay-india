@@ -1,0 +1,48 @@
+{
+  "name": "SeoBay India",
+  "legalName": "SeoBay India",
+  "url": "https://seobay.in",
+  "founder": {
+    "name": "Kapil Vashistha",
+    "role": "Founder & CEO",
+    "bio": "Senior Search Strategist with 16 years of hands-on experience in organic search, local SEO, and digital growth strategy. Additional practical capability in website engineering (2 years WordPress & Laravel).",
+    "seoExperienceYears": 16,
+    "webDevExperienceYears": 2
+  },
+  "contact": {
+    "phone": "+91 9783987422",
+    "phoneDisplay": "+91 97839 87422",
+    "whatsapp": "+919783987422",
+    "emailPrimary": "info@seobay.in",
+    "emailInquiry": "inquiry@seobay.in",
+    "emailPersonal": "vashu10.kapil@gmail.com"
+  },
+  "address": {
+    "street": "61/106-107, Madhyam Marg, behind Samrat Juice Center, Rajat Path, Mansarovar Sector 6",
+    "locality": "Mansarovar",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "postalCode": "302020",
+    "country": "India",
+    "countryCode": "IN",
+    "geo": {
+      "latitude": 26.8528,
+      "longitude": 75.7681
+    }
+  },
+  "social": {
+    "facebook": "https://facebook.com/seobayindia",
+    "instagram": "https://instagram.com/seobayindia",
+    "linkedin": "https://linkedin.com/company/seobayindia"
+  },
+  "pricing": {
+    "seoStartingMonthly": "₹20,000",
+    "seoStartingMonthlyNumeric": 20000,
+    "currency": "INR",
+    "note": "Scope calibrated based on competitive intensity, technical condition, geographic footprint, and content velocity."
+  },
+  "operatingHours": {
+    "days": "Monday - Saturday",
+    "hours": "09:30 AM - 07:00 PM IST"
+  }
+}
