@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { getSiteConfig } from '@/lib/content';
 import { MobileNav } from './MobileNav';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Phone, MessageSquare } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export function Header() {
   const config = getSiteConfig();
@@ -41,18 +42,8 @@ export function Header() {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-xl shadow-sm group-hover:bg-blue-700 transition">
-              S
-            </div>
-            <div>
-              <span className="font-extrabold text-xl tracking-tight text-slate-950">
-                SeoBay<span className="text-blue-600">.in</span>
-              </span>
-              <span className="block text-[10px] font-mono tracking-wider text-slate-500 uppercase font-bold">
-                India · Search & Growth
-              </span>
-            </div>
+          <Link href="/" className="group py-1" aria-label="SeoBay India Homepage">
+            <BrandLogo variant="dark" />
           </Link>
 
           {/* Desktop Navigation Links */}

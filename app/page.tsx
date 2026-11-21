@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getSiteConfig, getAllServices, getTestimonials } from '@/lib/content';
-import { ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, Search, MapPin, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, TrendingUp, Search, MapPin, Star, MessageSquare, Phone, Activity } from 'lucide-react';
+import { AgencyComparison } from '@/components/home/AgencyComparison';
 
 export default function HomePage() {
   const config = getSiteConfig();
@@ -10,42 +11,145 @@ export default function HomePage() {
   return (
     <div className="pb-16 sm:pb-0">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-slate-950 text-white pt-16 pb-20 overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <section className="relative bg-slate-950 text-white pt-14 pb-20 overflow-hidden border-b border-slate-800">
+        {/* Modern Background Accents */}
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#3b82f6_1.2px,transparent_1.2px)] [background-size:24px_24px]"></div>
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute bottom-10 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-mono text-slate-300 mb-6">
-              <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span>16 Years Hands-On Search Depth · Founder-Led Execution</span>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            
+            {/* Left Column: Direct, High-Impact Value Proposition */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 text-xs font-mono text-slate-300 mb-6 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>16 Years Search Depth · Founder-Led Strategy</span>
+              </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-              Search Visibility Built on <span className="text-blue-400">Technical Reality</span>, Not Empty Promises.
-            </h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] mb-6">
+                Search Visibility Built on <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500">Technical Reality</span>, Not Empty Promises.
+              </h1>
 
-            <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl">
-              We build crawlable architectures, dominate Google Maps, and capture commercial search demand for ambitious businesses in Jaipur and across India. No junior account handoffs. No fake rank guarantees.
-            </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
+                Crawlable architectures, Google Maps Pack domination, and high-intent commercial organic growth for ambitious businesses in Jaipur & across India.
+              </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/#consultation"
-                className="px-6 py-3.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-lg shadow-blue-600/30 flex items-center gap-2 transition"
-              >
-                <span>Schedule Strategy Consultation</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/#services"
-                className="px-6 py-3.5 text-sm font-semibold text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg transition"
-              >
-                <span>Explore Core Capabilities</span>
-              </Link>
-              <div className="w-full sm:w-auto text-xs font-mono text-slate-400 mt-2 sm:mt-0">
-                ✓ Engagements start from {config.pricing.seoStartingMonthly}/mo
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <Link
+                  href="/#consultation"
+                  className="px-6 py-3.5 text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 flex items-center gap-2 transition hover:-translate-y-0.5"
+                >
+                  <span>Schedule Strategy Consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+
+                <a
+                  href={`https://wa.me/${config.contact.whatsapp.replace(/[^0-9]/g, '')}?text=Hi%20Kapil,%20I%20am%20interested%20in%20discussing%20SEO%20and%20search%20visibility%20for%20my%20business.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3.5 text-xs sm:text-sm font-semibold text-emerald-300 bg-emerald-950/60 hover:bg-emerald-900/60 border border-emerald-700/60 rounded-xl flex items-center gap-2 transition hover:-translate-y-0.5"
+                >
+                  <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <span>WhatsApp with Kapil</span>
+                </a>
+              </div>
+
+              {/* 3 Trust Badges */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs font-mono text-slate-400 border-t border-slate-800/80 pt-6">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Retainers from {config.pricing.seoStartingMonthly}/mo</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                  <span>Mansarovar, Jaipur Physical Office</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                  <span>Zero Junior Account Handoffs</span>
+                </div>
               </div>
             </div>
+
+            {/* Right Column: High-Tech Live Diagnostic Card */}
+            <div className="lg:col-span-5">
+              <div className="relative bg-slate-900/90 border border-slate-700/70 rounded-2xl p-6 sm:p-7 shadow-2xl backdrop-blur-md overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+                {/* Card Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+                  <div className="flex items-center gap-2">
+                    <Activity className="w-4 h-4 text-blue-400" />
+                    <span className="font-mono text-xs uppercase font-bold tracking-wider text-slate-300">
+                      Search Diagnostic Engine
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-[10px] font-mono font-bold text-emerald-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>ONLINE</span>
+                  </div>
+                </div>
+
+                {/* Founder Spotlight Mini-Profile */}
+                <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800/80 mb-5 flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white font-extrabold text-base flex items-center justify-center flex-shrink-0 shadow-md">
+                    KV
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-white flex items-center gap-1.5">
+                      <span>{config.founder.name}</span>
+                      <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded font-mono font-semibold">
+                        DIRECT ENGAGEMENT
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-400 mt-0.5">
+                      {config.founder.seoExperienceYears} Years Search Depth · {config.founder.webDevExperienceYears} Years Web Engineering
+                    </p>
+                  </div>
+                </div>
+
+                {/* Live Diagnostic Matrix */}
+                <div className="space-y-3.5 mb-5">
+                  <div>
+                    <div className="flex justify-between text-xs font-mono mb-1">
+                      <span className="text-slate-300">Technical Crawl & Server Rendering</span>
+                      <span className="text-emerald-400 font-bold">99% Efficiency</span>
+                    </div>
+                    <div className="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-gradient-to-r from-blue-500 to-emerald-400 h-1.5 rounded-full w-[99%]"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between text-xs font-mono mb-1">
+                      <span className="text-slate-300">Local Maps Pack Proximity (Jaipur)</span>
+                      <span className="text-blue-400 font-bold">Top 3 Catchment</span>
+                    </div>
+                    <div className="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-gradient-to-r from-blue-600 to-cyan-400 h-1.5 rounded-full w-[94%]"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between text-xs font-mono mb-1">
+                      <span className="text-slate-300">Commercial Intent Targeting</span>
+                      <span className="text-indigo-400 font-bold">High-Intent Buyers</span>
+                    </div>
+                    <div className="w-full bg-slate-950 rounded-full h-1.5 overflow-hidden">
+                      <div className="bg-gradient-to-r from-indigo-500 to-blue-400 h-1.5 rounded-full w-[92%]"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Honesty Note */}
+                <div className="p-3 rounded-lg bg-blue-950/40 border border-blue-900/60 text-[11px] text-blue-200/90 leading-relaxed font-sans">
+                  <strong>The Reality Filter:</strong> We do not guarantee #1 rankings. We engineer flawless crawlability, local trust signals, and content depth so Google has every reason to rank your business over competitors.
+                </div>
+              </div>
+            </div>
+
           </div>
 
           {/* Pillars Preview */}
@@ -172,6 +276,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 2.5 THE HONESTY COMPARISON MATRIX */}
+      <AgencyComparison />
 
       {/* 3. FOUNDER CREDIBILITY & THE 3 PRINCIPLES */}
       <section id="founder" className="py-20 bg-slate-900 text-white border-b border-slate-800">

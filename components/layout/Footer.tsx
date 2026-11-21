@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getSiteConfig } from '@/lib/content';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export function Footer() {
   const config = getSiteConfig();
@@ -10,11 +11,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
           {/* Entity Profile */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white font-black text-sm">
-                S
-              </div>
-              <span className="font-extrabold text-lg text-white">SeoBay India</span>
+            <div className="mb-4">
+              <BrandLogo variant="light" />
             </div>
             <p className="text-slate-400 leading-relaxed mb-4 max-w-sm">
               Founder-led digital marketing and search visibility agency. Specializing in high-intent SEO, local map pack discovery, and Google Business Profile optimization.
